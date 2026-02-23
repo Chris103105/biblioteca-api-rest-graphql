@@ -1,0 +1,44 @@
+# 1. Definimos los "Tipos" de datos (Equivalentes a tus Entidades/DTOs)
+
+type Autor {
+    id: ID!
+    nombreCompleto: String!
+    nacionalidad: String
+    biografia: String
+}
+
+type Editorial {
+    id: ID!
+    nombre: String!
+    pais: String
+    sitioWeb: String
+}
+
+type Categoria {
+    id: ID!
+    nombre: String!
+    descripcion: String
+}
+
+type Libro {
+    id: ID!
+    titulo: String!
+    isbn: String!
+    paginas: Int
+    precio: Float
+    autor: Autor
+    editorial: Editorial
+    categorias: [Categoria]
+}
+
+# 2. Definimos las Consultas (Equivalente a los métodos GET en REST)
+type Query {
+    # Devuelve una lista de todos los libros
+    listarLibros: [Libro]
+
+    # Devuelve un solo libro basado en su ID
+    obtenerLibroPorId(id: ID!): Libro
+
+    # Devuelve una lista de todos los autores
+    listarAutores: [Autor]
+}
