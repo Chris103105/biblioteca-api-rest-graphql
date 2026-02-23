@@ -1,4 +1,4 @@
-package sv.edu.udb.biblioteca.service;
+package sv.edu.udb.biblioteca;
 // Ruta: src/main/java/sv/edu/udb/biblioteca/DataSeeder.java
 
 import lombok.RequiredArgsConstructor;
